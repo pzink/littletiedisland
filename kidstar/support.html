@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kid Star Help & Support - Learn how to create personalized bedtime stories for your children">
+    <meta name="keywords" content="Kid Star help, story creation guide, support, tutorial">
+    <title>Kid Star - Help & Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #34C759;
+            --accent-color: #30D158;
+            --text-dark: #1D1D1F;
+            --text-light: #6E6E73;
+            --background-light: #F5F5F7;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #007AFF 0%, #34C759 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Header */
+        header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        /* Steps Section */
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--background-light);
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            min-width: 40px;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--background-light);
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 1.8rem;
+            min-width: 40px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-content h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .feature-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Premium Benefits */
+        .premium-box {
+            background: var(--background-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .benefit-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .benefit-icon {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .benefit-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .premium-note {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Privacy Box */
+        .privacy-box {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(52, 199, 89, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .privacy-box p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .privacy-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .privacy-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-item {
+                flex-direction: column;
+            }
+
+            .step-number {
+                align-self: flex-start;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">🌟</span>
+                <span>Kid Star</span>
+            </div>
+            <div class="nav-links">
+                <a href="marketing-page.html">Home</a>
+                <a href="help-page.html">Help</a>
+                <a href="https://littletiedisland.com/kidstar-privacy-policy">Privacy</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Kid Star! 🌟</h1>
+            <p>Kid Star creates personalized, high-quality stories for children in seconds using Apple Intelligence.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- How to Create Stories -->
+        <section class="section">
+            <h2 class="section-title">How to Create Stories</h2>
+            <div class="steps-list">
+                <div class="step-item animate-in">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Choose Your Use Case</h3>
+                        <p>Select what you'd like to do: bedtime story, fun story, or teach a moral lesson</p>
+                    </div>
+                </div>
+
+                <div class="step-item animate-in" style="animation-delay: 0.1s;">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Add Characters</h3>
+                        <p>Add your child's name and age. Premium users can save profiles for instant story creation. Include siblings, pets, or other characters</p>
+                    </div>
+                </div>
+
+                <div class="step-item animate-in" style="animation-delay: 0.2s;">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Select Story Themes</h3>
+                        <p>Choose from themes like friendship, bravery, adventure, or mystery based on your selected use case</p>
+                    </div>
+                </div>
+
+                <div class="step-item animate-in" style="animation-delay: 0.3s;">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Customize Your Story</h3>
+                        <p>Pick story length, add custom scenarios, settings, and optional classic literature inspiration</p>
+                    </div>
+                </div>
+
+                <div class="step-item animate-in" style="animation-delay: 0.4s;">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Review Your Story</h3>
+                        <p>Review the generated story and tap 'Finish' to add it to your library. You can regenerate if needed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section class="section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">👥</div>
+                    <div class="feature-content">
+                        <h3>Personalized Characters</h3>
+                        <p>Add your child's name, age, siblings, pets, or even inanimate objects as characters</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">✨</div>
+                    <div class="feature-content">
+                        <h3>Use Case-Driven Stories</h3>
+                        <p>Choose bedtime stories, fun adventures, or moral lesson tales</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">💭</div>
+                    <div class="feature-content">
+                        <h3>Reflection Questions</h3>
+                        <p>Optional pause points with questions to promote critical thinking and discussion</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">📚</div>
+                    <div class="feature-content">
+                        <h3>Classic Inspiration</h3>
+                        <p>Draw inspiration from timeless literature patterns and archetypes</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">📄</div>
+                    <div class="feature-content">
+                        <h3>PDF Booklets</h3>
+                        <p>Export stories as printable PDF booklets for device-free reading (Premium)</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-content">
+                        <h3>Story Illustrations</h3>
+                        <p>Generate AI-powered illustrations using Apple Image Playground (Premium, iOS 18.1+)</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-content">
+                        <h3>Regenerate Stories</h3>
+                        <p>Refine stories until they're perfect (Unlimited with Premium)</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">📁</div>
+                    <div class="feature-content">
+                        <h3>Saved Profiles</h3>
+                        <p>Save your children's profiles for instant story creation (Premium)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Benefits -->
+        <section class="section">
+            <h2 class="section-title">Premium Benefits</h2>
+            <div class="premium-box">
+                <ul class="benefit-list">
+                    <li class="benefit-item">
+                        <span class="benefit-icon">∞</span>
+                        <span class="benefit-text">Unlimited story creation</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">🔄</span>
+                        <span class="benefit-text">Unlimited regenerations</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">👥</span>
+                        <span class="benefit-text">Save children's profiles for quick access</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">🎨</span>
+                        <span class="benefit-text">AI-generated story illustrations (iOS 18.1+)</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">📄</span>
+                        <span class="benefit-text">PDF booklet export</span>
+                    </li>
+                </ul>
+                <!--p class="premium-note"><strong>One-time payment of $10 — no subscription required!</strong></p-->
+            </div>
+        </section>
+
+        <!-- Privacy & Safety -->
+        <section class="section">
+            <h2 class="section-title">Privacy & Safety</h2>
+            <div class="privacy-box">
+                <p>All stories are generated on your device using Apple Intelligence. Your data never leaves your device, ensuring complete privacy and safety for your family.</p>
+                <a href="https://littletiedisland.com/kidstar-privacy-policy" class="privacy-link">
+                    <span>🛡️</span>
+                    <span>View Our Privacy Policy</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-content">
+            <h2>Need Additional Help?</h2>
+            <p>Our support team is here to help! If you have questions, feedback, or need assistance, don't hesitate to reach out.</p>
+            <a href="mailto:support@littletiedisland.com" class="contact-button">
+                <span>📧</span>
+                <span>Email Support</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="support.html">Help & Support</a>
+            <a href="kidstar-privacy-policy.html">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="mailto:support@littletiedisland.com">Contact</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kid Star. All rights reserved. Made with ❤️ for families.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.querySelectorAll('.feature-item, .step-item').forEach((el, index) => {
+            if (!el.classList.contains('animate-in')) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                el.style.transitionDelay = `${index * 0.05}s`;
+                observer.observe(el);
+            }
+        });
+    </script>
+</body>
+</html>
