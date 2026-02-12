@@ -161,18 +161,16 @@ As we do not collect any personal data, most data subject rights and obligations
 
 If you have questions about this Privacy Policy or Kid Star's privacy practices:
 
-**Email**: littletiedisland@gmail.com
+**Email**: support@littletiedisland.com
 
 **Response Time**: We aim to respond within 48 hours
 
 ## Summary
 
 **In Plain English:**
-- Kid Star generates stories and illustrations entirely on your device using Apple Intelligence
-- We never see, collect, or store your data
-- Character names, stories, and images never leave your device
-- No tracking, no analytics, no advertisements
-- Your family's privacy is completely protected
+- Kid Star generates stories and illustrations entirely on your device using Apple Intelligence 
+- The only time character names, stories, and images are ever sent to the developers is in the case that a user explicitly chooses "Send Feedback" about a story. Encrypted details of that story, including character names and ages, are encrypted sent to the developers
+- Your family's privacy is important to us
 
 ---
 
