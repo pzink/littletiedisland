@@ -5,113 +5,262 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Little Tied Island LLC, Engineering Consulting Services">
     <title>Little Tied Island, LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --navy:       #1A3350;
+            --navy-dark:  #0F1F33;
+            --teal:       #2A7F8F;
+            --teal-light: #3A9BAD;
+            --teal-pale:  #EBF5F7;
+            --white:      #FFFFFF;
+            --gray-50:    #F7F8FA;
+            --gray-100:   #EAECF0;
+            --text:       #1E2533;
+            --text-muted: #5A6478;
+            --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+            --max-width:  1080px;
         }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            font-family: var(--font-sans);
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 60px 40px;
-            max-width: 800px;
+        a { color: var(--teal); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── Navigation ── */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(26, 51, 80, 0.97);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 62px;
+        }
+
+        .nav__logo {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+        .nav__logo span { color: var(--teal-light); }
+
+        .nav__cta {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            padding: 0.5rem 1.1rem;
+            border: 1.5px solid var(--teal-light);
+            border-radius: 4px;
+            color: var(--teal-light) !important;
+            transition: background 0.2s, color 0.2s;
+        }
+        .nav__cta:hover {
+            background: var(--teal-light);
+            color: var(--white) !important;
+            text-decoration: none;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, #1F4A5E 100%);
+            color: var(--white);
+            padding: 7rem 1.5rem 6rem;
             text-align: center;
         }
 
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            line-height: 1.2;
+        .hero__inner {
+            max-width: 640px;
+            margin: 0 auto;
         }
 
-        .subtitle {
-            color: #667eea;
-            font-size: 1.3em;
-            margin-bottom: 30px;
+        .hero__tag {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.7rem;
             font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--teal-light);
+            border: 1px solid rgba(58,155,173,0.4);
+            border-radius: 2px;
+            padding: 0.3rem 0.75rem;
+            margin-bottom: 1.75rem;
         }
 
-        .divider {
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            margin: 30px auto;
+        .hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero p {
+            color: rgba(255,255,255,0.72);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero__divider {
+            width: 60px;
+            height: 3px;
+            background: var(--teal);
+            margin: 0 auto 2.5rem;
             border-radius: 2px;
         }
 
-        p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.1em;
-        }
-
-        .coming-soon {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
+        .btn {
             display: inline-block;
-            margin-top: 20px;
+            font-size: 0.875rem;
             font-weight: 600;
-            font-size: 1em;
+            letter-spacing: 0.03em;
+            padding: 0.75rem 1.75rem;
+            border-radius: 4px;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .btn:hover { text-decoration: none; transform: translateY(-1px); }
+
+        .btn--primary {
+            background: var(--teal);
+            color: var(--white);
+            box-shadow: 0 2px 12px rgba(42,127,143,0.35);
+        }
+        .btn--primary:hover {
+            background: var(--teal-light);
+            box-shadow: 0 4px 16px rgba(42,127,143,0.45);
         }
 
-        .contact-info {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
+        /* ── Contact section ── */
+        .contact {
+            padding: 5rem 1.5rem;
+            text-align: center;
+            background: var(--gray-50);
         }
 
-        .contact-info p {
-            margin-bottom: 10px;
-            font-size: 1em;
+        .contact__inner {
+            max-width: 480px;
+            margin: 0 auto;
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.8em;
-            }
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 0.75rem;
+        }
 
-            .subtitle {
-                font-size: 1.1em;
-            }
+        .contact h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: -0.015em;
+            margin-bottom: 1rem;
+        }
 
-            .container {
-                padding: 40px 25px;
-            }
+        .contact p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.75rem;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--navy-dark);
+            color: rgba(255,255,255,0.45);
+            padding: 2rem 1.5rem;
+        }
+
+        .footer__inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer__logo {
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+        }
+        .footer__logo span { color: var(--teal-light); }
+
+        .footer__note {
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 560px) {
+            .footer__inner { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Little Tied Island, LLC</h1>
-        <div class="subtitle">Professional Engineering Solutions</div>
 
-        <div class="divider"></div>
-
-        <p>
-            Expert consulting services tailored to meet your needs.
-        </p>
-
-        <div class="contact-info">
-            <p><strong>Get in Touch</strong></p>
-            <p>For inquiries, <a href="mailto:info@littletiedisland.com">please contact us</a></p>
+    <nav class="nav" aria-label="Main navigation">
+        <div class="nav__inner">
+            <span class="nav__logo">Little Tied Island<span>, LLC</span></span>
+            <a class="nav__cta" href="mailto:info@littletiedisland.com">Contact Us</a>
         </div>
-    </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero__inner">
+            <div class="hero__tag">Engineering Consulting</div>
+            <h1>Little Tied Island, LLC</h1>
+            <div class="hero__divider"></div>
+            <p>Expert engineering design consulting services tailored to meet your needs.</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="contact__inner">
+            <span class="eyebrow">Contact</span>
+            <h2>Let's Work Together</h2>
+            <p>For inquiries, reach out and we'll get back to you promptly.</p>
+            <a class="btn btn--primary" href="mailto:info@littletiedisland.com">Email Us</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__logo">Little Tied Island<span>, LLC</span></div>
+            <p class="footer__note">Located in Boston, MA USA</p>
+        </div>
+    </footer>
+
 </body>
 </html>
